@@ -116,7 +116,7 @@ export default function App() {
     {
       title: 'Internshala Student Partner',
       company: 'Internshala',
-      period: 'Jan 2024 - Present',
+      period: 'Jan 2024 - Sep 2024',
       description: 'Campus Ambassador promoting internship opportunities and career development. Organized tech events and workshops, significantly increasing student engagement and participation in internship programs.',
       achievements: ['Campus Ambassador', 'Tech Events', 'Student Engagement'],
       icon: Users
@@ -132,7 +132,7 @@ export default function App() {
     {
       title: 'Creative Core Member',
       company: 'ISSA Club - NIE Mysuru',
-      period: 'Aug 2023 - Present',
+      period: 'Aug 2023 - Sep 2024',
       description: 'Led creative initiatives for cybersecurity awareness campaigns and technical events. Organized workshops on web security, ethical hacking, and coordinated tech and non-tech events for student community.',
       achievements: ['Event Leadership', 'Cybersecurity Awareness', 'Community Building'],
       icon: Shield
@@ -273,9 +273,20 @@ export default function App() {
               </span>
             </motion.div>
             
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 sm:mb-8 bg-gradient-to-r from-electric-blue via-tech-purple to-tech-emerald bg-clip-text text-transparent leading-tight px-4">
-              Harshitha S. Shankar
-            </h1>
+{/* Centered name section */}
+<div className="flex items-center justify-center w-full my-6">
+  <div
+    style={{ fontFamily: 'Poppins, sans-serif' }}
+    className="font-semibold text-[1.8rem] sm:text-[2rem] md:text-[2.2rem] text-transparent bg-clip-text bg-gradient-to-r from-[#9A5AFF] via-[#C77DFF] to-[#FFB347] tracking-[0.5px] text-center">
+    Welcome to My Portfolio
+  </div>
+</div>
+
+{/* Header section below the name */}
+<h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 sm:mb-8 bg-gradient-to-r from-[#007CF0] via-[#00DFD8] to-[#7928CA] bg-clip-text text-transparent leading-tight px-4 text-center">
+   Harshitha S.Shankar
+</h1>
+
             
             <p className="text-lg sm:text-xl md:text-2xl text-tech-light-gray mb-3 sm:mb-4 leading-relaxed max-w-3xl mx-auto px-4">
               CS Student @ NIE | Cybersecurity & Software Developer

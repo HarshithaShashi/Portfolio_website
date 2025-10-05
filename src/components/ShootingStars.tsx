@@ -177,6 +177,101 @@ export function ShootingStars() {
           }}
         />
       ))}
+
+      {/* Orbital Ring System - 3 concentric rings */}
+      {Array.from({ length: 3 }, (_, i) => (
+        <div
+          key={`orbit-${i}`}
+          className="absolute rounded-full border border-electric-blue/20"
+          style={{
+            left: '50%',
+            top: '50%',
+            width: `${200 + i * 150}px`,
+            height: `${200 + i * 150}px`,
+            transform: 'translate(-50%, -50%)',
+            animation: `orbit ${20 + i * 10}s linear infinite`,
+            opacity: 0.1 + Math.random() * 0.2,
+          }}
+        />
+      ))}
+
+      {/* Floating Geometric Shapes */}
+      {Array.from({ length: 6 }, (_, i) => {
+        const shapes = [
+          'polygon(50% 0%, 0% 100%, 100% 100%)', // triangle
+          'polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)', // diamond
+          'polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%)', // hexagon
+          'polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%)', // octagon
+          'polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)', // star
+          'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)', // square
+        ];
+        
+        return (
+          <div
+            key={`shape-${i}`}
+            className="absolute"
+            style={{
+              left: `${20 + i * 15}%`,
+              top: `${30 + i * 10}%`,
+              width: '40px',
+              height: '40px',
+              clipPath: shapes[i % shapes.length],
+              border: '2px solid rgba(139, 92, 246, 0.3)',
+              animation: `float-shape ${8 + Math.random() * 4}s ease-in-out infinite`,
+              animationDelay: `${Math.random() * 4}s`,
+            }}
+          />
+        );
+      })}
+
+      {/* Data Streams - 4 vertical flowing bars */}
+      {Array.from({ length: 4 }, (_, i) => (
+        <div
+          key={`stream-${i}`}
+          className="absolute w-1 bg-gradient-to-b from-transparent via-tech-emerald to-transparent"
+          style={{
+            left: `${15 + i * 20}%`,
+            top: '-100px',
+            height: '200px',
+            animation: `data-stream ${4 + Math.random() * 2}s linear infinite`,
+            animationDelay: `${Math.random() * 4}s`,
+            opacity: 0.6,
+          }}
+        />
+      ))}
+
+      {/* Constellation Connections - SVG lines between nearby stars */}
+      <svg className="absolute inset-0 w-full h-full pointer-events-none">
+        {staticStars.slice(0, 20).map((star1, i) => 
+          staticStars.slice(i + 1, 21).map((star2, j) => {
+            const distance = Math.sqrt(
+              Math.pow(star1.left - star2.left, 2) + 
+              Math.pow(star1.top - star2.top, 2)
+            );
+            
+            if (distance < 25) { // Only connect nearby stars
+              return (
+                <line
+                  key={`constellation-${i}-${j}`}
+                  x1={`${star1.left}%`}
+                  y1={`${star1.top}%`}
+                  x2={`${star2.left}%`}
+                  y2={`${star2.top}%`}
+                  stroke="#0ea5e9"
+                  strokeWidth="1"
+                  opacity="0.2"
+                  className="animate-pulse"
+                  style={{
+                    animation: 'constellation-pulse 3s ease-in-out infinite',
+                    animationDelay: `${Math.random() * 3}s`,
+                  }}
+                />
+              );
+            }
+            return null;
+          })
+        )}
+      </svg>
     </div>
   );
 }

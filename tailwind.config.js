@@ -47,6 +47,16 @@ module.exports = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        // Cosmic Tech Colors
+        'tech-dark': '#0a0a0f',
+        'tech-slate': '#1a1a2e',
+        'tech-card': '#0f1629',
+        'electric-blue': '#0ea5e9',
+        'tech-purple': '#8b5cf6',
+        'tech-emerald': '#10b981',
+        'tech-white': '#f8fafc',
+        'tech-gray': '#64748b',
+        'tech-light-gray': '#94a3b8',
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -110,8 +120,18 @@ module.exports = {
         "shoot": "shoot 3s linear infinite",
         "float": "float 4s ease-in-out infinite",
         "twinkle": "twinkle 2s ease-in-out infinite",
+        "orbit": "orbit 20s linear infinite",
+        "float-shape": "float-shape 8s ease-in-out infinite",
+        "constellation-pulse": "constellation-pulse 3s ease-in-out infinite",
+        "data-stream": "data-stream 4s linear infinite",
       },
     },
   },
   plugins: [require("tailwindcss-animate")],
+  // Custom utilities
+  theme: {
+    extend: {
+      // ... existing extensions
+    }
+  }
 }

@@ -19,9 +19,9 @@ export function GlowCard({
   variant = 'glass'
 }: GlowCardProps) {
   const glowClasses = {
-    blue: 'hover:shadow-electric-blue/20 hover:border-electric-blue/40',
-    purple: 'hover:shadow-tech-purple/20 hover:border-tech-purple/40',
-    emerald: 'hover:shadow-tech-emerald/20 hover:border-tech-emerald/40'
+    blue: 'hover:shadow-electric-blue/20 hover:border-electric-blue/40 tech-glow-blue-hover',
+    purple: 'hover:shadow-tech-purple/20 hover:border-tech-purple/40 tech-glow-purple-hover',
+    emerald: 'hover:shadow-tech-emerald/20 hover:border-tech-emerald/40 tech-glow-emerald-hover'
   };
 
   const variantClasses = {
