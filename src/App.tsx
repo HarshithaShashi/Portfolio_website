@@ -10,6 +10,7 @@ import { Button } from './components/ui/button';
 import { Input } from './components/ui/input';
 import { Textarea } from './components/ui/textarea';
 import { ImageWithFallback } from './components/figma/ImageWithFallback';
+import profileImg from './assets/images/IMG_20250810_102400.jpg';
 
 export default function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -327,7 +328,7 @@ export default function App() {
 
           <div className="grid lg:grid-cols-2 gap-12 sm:gap-16 lg:gap-20 items-center">
             <motion.div
-              initial={{ opacity: 0, x: -50 }}
+              initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
@@ -335,7 +336,7 @@ export default function App() {
             >
               <div className="relative z-10">
                 <ImageWithFallback
-                  src="https://images.unsplash.com/photo-1494790108755-2616b612b47c?w=400&h=400&fit=crop&crop=face"
+                  src={profileImg}
                   alt="Harshitha S. Shankar"
                   className="w-64 h-64 sm:w-80 sm:h-80 rounded-3xl object-cover mx-auto lg:mx-0 shadow-2xl"
                 />

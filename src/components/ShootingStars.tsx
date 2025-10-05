@@ -240,38 +240,7 @@ export function ShootingStars() {
         />
       ))}
 
-      {/* Constellation Connections - SVG lines between nearby stars */}
-      <svg className="absolute inset-0 w-full h-full pointer-events-none">
-        {staticStars.slice(0, 20).map((star1, i) => 
-          staticStars.slice(i + 1, 21).map((star2, j) => {
-            const distance = Math.sqrt(
-              Math.pow(star1.left - star2.left, 2) + 
-              Math.pow(star1.top - star2.top, 2)
-            );
-            
-            if (distance < 25) { // Only connect nearby stars
-              return (
-                <line
-                  key={`constellation-${i}-${j}`}
-                  x1={`${star1.left}%`}
-                  y1={`${star1.top}%`}
-                  x2={`${star2.left}%`}
-                  y2={`${star2.top}%`}
-                  stroke="#0ea5e9"
-                  strokeWidth="1"
-                  opacity="0.2"
-                  className="animate-pulse"
-                  style={{
-                    animation: 'constellation-pulse 3s ease-in-out infinite',
-                    animationDelay: `${Math.random() * 3}s`,
-                  }}
-                />
-              );
-            }
-            return null;
-          })
-        )}
-      </svg>
+      {/* Constellation connection lines removed as requested */}
     </div>
   );
 }
